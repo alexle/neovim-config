@@ -7,7 +7,8 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    require("neo-tree").setup({
+    local neo_tree = require("neo-tree")
+    neo_tree.setup({
       filesystem = {
         filtered_items = {
           hide_dotfiles = false,

@@ -1,8 +1,14 @@
 vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set clipboard+=unnamedplus")
+vim.cmd("set hlsearch")
+vim.cmd("set incsearch")
+vim.cmd("set ignorecase")
+vim.cmd("set smartcase")
+vim.cmd("set showmatch")
+vim.cmd("set number")
 
 vim.g.mapleader = " "
 
@@ -10,14 +16,18 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 map("i", "jj", "<Esc>", opts)
-map("n", "<leader>q", ":wqa<CR>", opts)
+map("n", "<leader>qa", ":wqa<CR>", opts)
 
--- Custom
+vim.keymap.set("n", "<leader>q", "<C-w>c", opts)
+vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
+
 local function save_and_format()
-	vim.cmd("wa")
-	vim.lsp.buf.format()
+  vim.cmd("wa")
+  vim.lsp.buf.format()
 end
-  vim.keymap.set("n", "<leader>w", save_and_format, opts)
+vim.keymap.set("n", "<leader>w", save_and_format, opts)
 
 -- None LS
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
@@ -28,7 +38,7 @@ vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- LazyGit
-map("n", "<leader>lg", ":LazyGit<CR>", opts)
+map("n", "<leader>gg", ":LazyGit<CR>", opts)
 
 -- GitSigns
 map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
