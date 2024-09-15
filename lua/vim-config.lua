@@ -23,8 +23,8 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 local function save_and_format()
-	vim.cmd("wa")
-	vim.lsp.buf.format()
+  vim.cmd("wa")
+  vim.lsp.buf.format()
 end
 vim.keymap.set("n", "<leader>w", save_and_format, opts)
 
