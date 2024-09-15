@@ -43,7 +43,7 @@ map("n", "<leader>gg", ":LazyGit<CR>", opts)
 map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
 map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
 
--- GitSigns
+-- Diffview
 map("n", "<leader>gd", ":DiffviewOpen<CR>", opts)
 
 -- NeoTree
