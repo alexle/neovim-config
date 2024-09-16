@@ -39,6 +39,9 @@ end
 vim.keymap.set("n", "<leader>w", save_and_format, opts)
 vim.keymap.set("n", "<leader>c", "<C-w>c", opts)
 
+-- Select all
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
 -- Nav windows
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
