@@ -1,14 +1,28 @@
-vim.cmd("set expandtab")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
 vim.cmd("set clipboard+=unnamedplus")
-vim.cmd("set hlsearch")
-vim.cmd("set incsearch")
-vim.cmd("set ignorecase")
-vim.cmd("set smartcase")
-vim.cmd("set showmatch")
-vim.cmd("set number")
+
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.smarttab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+
+vim.opt.number = true
+vim.opt.title = true
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.cmdheight = 0
+vim.opt.laststatus = 0
+vim.opt.scrolloff = 10
+vim.opt.wrap = false
+vim.opt.backspace = { "start", "eol", "indent" }
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitkeep = "cursor"
 
 vim.g.mapleader = " "
 
@@ -17,16 +31,19 @@ local opts = { noremap = true, silent = true }
 
 map("i", "jj", "<Esc>", opts)
 
-vim.keymap.set("n", "<leader>c", "<C-w>c", opts)
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
-
+-- Save and quit
 local function save_and_format()
 	vim.cmd("wa")
 	vim.lsp.buf.format()
 end
 vim.keymap.set("n", "<leader>w", save_and_format, opts)
+vim.keymap.set("n", "<leader>c", "<C-w>c", opts)
+
+-- Nav windows
+vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
+vim.keymap.set("n", "sv", ":vsplit<CR>", opts)
 
 -- None LS
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
