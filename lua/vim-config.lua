@@ -19,6 +19,7 @@ vim.opt.cmdheight = 0
 vim.opt.laststatus = 0
 vim.opt.scrolloff = 10
 vim.opt.wrap = false
+vim.opt.swapfile = false
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -33,8 +34,8 @@ map("i", "jj", "<Esc>", opts)
 
 -- Save and quit
 local function save_and_format()
-	vim.cmd("wa")
-	vim.lsp.buf.format()
+  vim.cmd("wa")
+  vim.lsp.buf.format()
 end
 vim.keymap.set("n", "<leader>w", save_and_format, opts)
 vim.keymap.set("n", "<leader>c", "<C-w>c", opts)
@@ -65,6 +66,7 @@ map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
 
 -- Diffview
 map("n", "<leader>gd", ":DiffviewOpen<CR>", opts)
+map("n", "<leader>gc", ":DiffviewClose<CR>", opts)
 
 -- NeoTree
 map("n", "<C-n>", ":Neotree filesystem reveal left<CR>", opts)
