@@ -19,6 +19,7 @@ vim.opt.cmdheight = 0
 vim.opt.laststatus = 0
 vim.opt.scrolloff = 10
 vim.opt.wrap = false
+vim.opt_local.wrap = true
 vim.opt.swapfile = false
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.splitbelow = true
