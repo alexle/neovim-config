@@ -38,6 +38,10 @@ local function save_and_format()
   vim.cmd("wa")
   vim.lsp.buf.format()
 end
+local function close_and_format()
+  vim.lsp.buf.format()
+  vim.cmd("close")
+end
 vim.keymap.set("n", "<leader>w", save_and_format, opts)
 vim.keymap.set("n", "<leader>c", "<C-w>c", opts)
 
@@ -49,6 +53,7 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "sv", ":vsplit<CR>", opts)
+vim.keymap.set("n", "sc", close_and_format, opts)
 
 -- None LS
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
