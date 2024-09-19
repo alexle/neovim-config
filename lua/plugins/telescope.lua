@@ -7,20 +7,22 @@ return {
     },
     config = function()
       local builtin = require("telescope.builtin")
+      local opts = { noremap = true, silent = true }
 
-      vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-      vim.keymap.set("n", "<C-[>", builtin.live_grep, {})
-      vim.keymap.set("n", "<leader>r", builtin.lsp_references, {})
-      vim.keymap.set("n", "<leader>d", builtin.lsp_definitions, {})
-      vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-      vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+      vim.keymap.set("n", "<C-p>", builtin.find_files, opts)
+      vim.keymap.set("n", "<C-g>", builtin.live_grep, opts)
+      vim.keymap.set("n", "<leader>r", builtin.lsp_references, opts)
+      vim.keymap.set("n", "<leader>d", builtin.lsp_definitions, opts)
+      vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
+      vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
 
       local actions = require("telescope.actions")
       require("telescope").setup({
         defaults = {
           mappings = {
             i = {
-              ["<esc>"] = actions.close,
+              -- Add to escape once out of live_grep
+              --["<esc>"] = actions.close,
               ["<C-u>"] = false,
             },
           },
@@ -29,7 +31,7 @@ return {
           buffers = {
             mappings = {
               i = {
-                ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+                ["fc"] = actions.delete_buffer + actions.move_to_top,
               },
             },
           },
