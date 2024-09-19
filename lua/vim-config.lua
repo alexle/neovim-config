@@ -40,14 +40,15 @@ local function format_and_save()
 end
 local function format_and_close()
 	vim.lsp.buf.format()
-	vim.cmd("close")
+	vim.cmd("wq")
 end
-local function format_and_quit()
+local function format_and_quit_all()
 	vim.lsp.buf.format()
 	vim.cmd("wqa")
 end
 vim.keymap.set("n", "<leader>w", format_and_save, opts)
-vim.keymap.set("n", "<leader>wq", format_and_quit, opts)
+vim.keymap.set("n", "<leader>q", format_and_close, opts)
+vim.keymap.set("n", "<leader>wq", format_and_quit_all, opts)
 
 -- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
@@ -57,7 +58,12 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "sv", ":vsplit<CR>", opts)
-vim.keymap.set("n", "sc", format_and_close, opts)
+
+local function format_and_split_close()
+	vim.lsp.buf.format()
+	vim.cmd("close")
+end
+vim.keymap.set("n", "sc", format_and_split_close, opts)
 
 -- None LS
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
