@@ -26,6 +26,7 @@ return {
       lspconfig.terraform_lsp.setup({capabilities = capabilities})
       lspconfig.terraformls.setup({capabilities = capabilities})
       lspconfig.html.setup({capabilities = capabilities})
+      lspconfig.css_variables.setup({capabilities = capabilities})
     end,
   },
 }
