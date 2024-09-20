@@ -14,6 +14,7 @@ return {
 					javascript = { "prettierd", "prettier", stop_after_first = true },
 					terraform = { "terraform_fmt" },
 					bash = { "shfmt" },
+					yaml = { "yamlfix" },
 				},
 				format_on_save = {
 					timeout_ms = 500,
