@@ -15,6 +15,7 @@ return {
 					terraform = { "terraform_fmt" },
 					bash = { "shfmt" },
 					yaml = { "yamlfix" },
+					html = { "htmlbeautifier" },
 				},
 				format_on_save = {
 					timeout_ms = 500,
