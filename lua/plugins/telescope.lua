@@ -15,6 +15,9 @@ return {
 			vim.keymap.set("n", "<leader>d", builtin.lsp_definitions, opts)
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
+			vim.keymap.set("n", "<leader>l", function()
+				builtin.lsp_document_symbols({ symbols = { "function", "method" } })
+			end, opts)
 
 			local actions = require("telescope.actions")
 			require("telescope").setup({
