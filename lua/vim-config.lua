@@ -69,10 +69,13 @@ map("n", "<leader>dc", ":DiffviewClose<CR>", opts)
 -- NeoTree
 map("n", "<C-n>", ":Neotree filesystem reveal left<CR>", opts)
 
--- Fugitive
-map("n", "<leader>gst", ":Git status<CR>", opts)
-map("n", "<leader>gb", ":Git branch<CR>", opts)
-map("n", "<leader>gco", ":Git checkout ", { noremap = true })
-map("n", "<leader>gaa", ":Git add --all<CR>", opts)
-map("n", "<leader>gca", ":Git commit -v -a<CR>", opts)
-map("n", "<leader>gcm", ":Git commit -v -a -m '", { noremap = true })
+-- Manage floating windows
+vim.keymap.set("n", "<esc>", function()
+	for _, win in ipairs(vim.api.nvim_list_wins()) do
+		if vim.api.nvim_win_get_config(win).relative == "win" then
+			vim.api.nvim_win_close(win, false)
+		end
+	end
+end)
+
+vim.api.nvim_set_keymap("t", "<C-t>", "<C-\\><C-n>:CFloatTerm<CR>", { noremap = true, silent = true })
