@@ -1,4 +1,5 @@
 vim.cmd("set clipboard+=unnamedplus")
+vim.cmd("set cursorline")
 
 vim.opt.autoindent = true
 vim.opt.smartindent = true
