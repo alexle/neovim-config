@@ -41,6 +41,9 @@ vim.keymap.set("n", "<leader>wq", ":wqa<CR>", opts)
 -- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
+-- Copy inside double quotes
+vim.keymap.set("n", "<leader>;", 'yi"', opts)
+
 -- Nav windows
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
