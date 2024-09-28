@@ -35,7 +35,7 @@ local opts = { noremap = true, silent = true }
 map("i", "jj", "<Esc>", opts)
 
 vim.keymap.set("n", "<leader>w", ":wa<CR>", opts)
-vim.keymap.set("n", "<leader>q", "wq<CR>", opts)
+vim.keymap.set("n", "<leader>q", ":wq<CR>", opts)
 vim.keymap.set("n", "<leader>wq", ":wqa<CR>", opts)
 
 -- Select all
