@@ -73,6 +73,10 @@ map("n", "<leader>dc", ":DiffviewClose<CR>", opts)
 -- NeoTree
 map("n", "<C-n>", ":Neotree filesystem reveal left<CR>", opts)
 
+-- Go Nvim Test
+map("n", "<leader>ut", ":GoTestPkg<CR>", opts)
+map("n", "<leader>uf", ":GoTestFunc<CR>", opts)
+
 -- Manage floating windows
 vim.keymap.set("n", "<esc>", function()
 	for _, win in ipairs(vim.api.nvim_list_wins()) do
