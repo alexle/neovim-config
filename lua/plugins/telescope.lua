@@ -10,9 +10,9 @@ return {
 			local opts = { noremap = true, silent = true }
 
 			-- files
-			vim.keymap.set("n", "<C-p>", builtin.find_files, opts)
+			vim.keymap.set("n", "<leader> ", builtin.find_files, opts)
 			-- grep
-			vim.keymap.set("n", "<C-g>", builtin.live_grep, opts)
+			vim.keymap.set("n", "<leader>f", builtin.live_grep, opts)
 			-- references
 			vim.keymap.set("n", "<leader>r", builtin.lsp_references, opts)
 			-- definition
