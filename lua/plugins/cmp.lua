@@ -38,6 +38,7 @@ return {
 					{ name = "cmp-nvim-lsp" },
 					{ name = "cmp-buffer" },
 					{ name = "cmp-cmdline" },
+					{ name = "copilot" },
 				}, {
 					{ name = "buffer" },
 				}),
