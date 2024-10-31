@@ -27,6 +27,9 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
+
 vim.g.mapleader = " "
 
 local map = vim.keymap.set
@@ -48,8 +51,8 @@ vim.keymap.set("n", "<leader>;", 'yi"', opts)
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
-vim.keymap.set("n", "sv", ":vsplit<CR>", opts)
-vim.keymap.set("n", "sc", ":close<CR>", opts)
+vim.keymap.set("n", "<leader>v", ":vsplit<CR>", opts)
+vim.keymap.set("n", "<leader>c", ":close<CR>", opts)
 
 -- None LS
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
