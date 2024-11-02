@@ -70,7 +70,7 @@ map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
 map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
 
 -- Diffview
-map("n", "<leader>df", ":DiffviewOpen<CR>", opts)
+map("n", "<leader>df", ":DiffviewOpen origin/main...HEAD<CR>", opts)
 map("n", "<leader>dc", ":DiffviewClose<CR>", opts)
 
 -- NeoTree
