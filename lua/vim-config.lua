@@ -34,6 +34,7 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
+local builtin = require("telescope.builtin")
 
 map("i", "jj", "<Esc>", opts)
 
@@ -52,6 +53,9 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 vim.keymap.set("n", "<leader>v", ":vsplit<CR>", opts)
+
+-- Nav tabs
+vim.keymap.set("n", "<Tab>", "gt", opts)
 vim.keymap.set("n", "<leader>c", ":close<CR>", opts)
 
 -- None LS
@@ -68,6 +72,16 @@ map("n", "<leader>gg", ":LazyGit<CR>", opts)
 -- GitSigns
 map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
 map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
+
+-- Telescope
+vim.keymap.set("n", "<leader> ", builtin.find_files, opts)
+vim.keymap.set("n", "<leader>f", builtin.live_grep, opts)
+vim.keymap.set("n", "<leader>r", builtin.lsp_references, opts)
+vim.keymap.set("n", "<leader>d", builtin.lsp_definitions, opts)
+vim.keymap.set("n", "<leader>,", builtin.buffers, opts)
+vim.keymap.set("n", "<leader>l", function()
+	builtin.lsp_document_symbols({ symbols = { "function", "method" } })
+end, opts)
 
 -- Diffview
 map("n", "<leader>df", ":DiffviewOpen origin/main...HEAD<CR>", opts)

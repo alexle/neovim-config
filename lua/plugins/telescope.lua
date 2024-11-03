@@ -6,24 +6,6 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 		config = function()
-			local builtin = require("telescope.builtin")
-			local opts = { noremap = true, silent = true }
-
-			-- files
-			vim.keymap.set("n", "<leader> ", builtin.find_files, opts)
-			-- grep
-			vim.keymap.set("n", "<leader>f", builtin.live_grep, opts)
-			-- references
-			vim.keymap.set("n", "<leader>r", builtin.lsp_references, opts)
-			-- definition
-			vim.keymap.set("n", "<leader>d", builtin.lsp_definitions, opts)
-			-- buffer
-			vim.keymap.set("n", "<leader>,", builtin.buffers, opts)
-			-- symbols
-			vim.keymap.set("n", "<leader>l", function()
-				builtin.lsp_document_symbols({ symbols = { "function", "method" } })
-			end, opts)
-
 			local actions = require("telescope.actions")
 			require("telescope").setup({
 				defaults = {
