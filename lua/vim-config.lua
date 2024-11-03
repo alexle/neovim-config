@@ -80,6 +80,10 @@ map("n", "<C-n>", ":Neotree filesystem reveal left<CR>", opts)
 map("n", "<leader>ut", ":GoTestPkg<CR>", opts)
 map("n", "<leader>uf", ":GoTestFunc<CR>", opts)
 
+-- Copilot Chat
+map("n", "<leader>m", ":CopilotChatToggle<CR>", opts)
+map("n", "<leader><Tab>", ":CopilotChat ", opts)
+
 -- Manage floating windows
 vim.keymap.set("n", "<esc>", function()
 	for _, win in ipairs(vim.api.nvim_list_wins()) do
