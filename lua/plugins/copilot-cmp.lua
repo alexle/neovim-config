@@ -20,13 +20,17 @@ return {
 		"CopilotC-Nvim/CopilotChat.nvim",
 		branch = "canary",
 		dependencies = {
-			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+			{ "zbirenbaum/copilot.lua" }, -- Or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" },
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
 		opts = {
 			debug = false,
-			-- See Configuration section for rest
+			auto_insert_mode = true, -- Automatically insert the suggestion in insert mode
+			highlight_selection = true, -- Highlight suggestion in the source buffer when in the chat win
+			window = {
+				width = 0.3, -- Fraction of the parent's screen width
+			},
 		},
 		-- See Commands section for default commands if you want to lazy load on them
 	},
