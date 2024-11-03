@@ -56,7 +56,7 @@ vim.keymap.set("n", "<leader>v", ":vsplit<CR>", opts)
 
 -- Nav tabs
 vim.keymap.set("n", "<Tab>", "gt", opts)
-vim.keymap.set("n", "<leader>c", ":close<CR>", opts)
+vim.keymap.set("n", "<leader>x", ":close<CR>", opts)
 
 -- None LS
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
@@ -95,7 +95,7 @@ map("n", "<leader>ut", ":GoTestPkg<CR>", opts)
 map("n", "<leader>uf", ":GoTestFunc<CR>", opts)
 
 -- Copilot Chat
-map("n", "<leader>m", ":CopilotChatToggle<CR>", opts)
+map("n", "<leader>c", ":CopilotChatToggle<CR>", opts)
 map("n", "<leader><Tab>", ":CopilotChat ", opts)
 
 -- Manage floating windows
