@@ -49,18 +49,16 @@ return {
 							upgrade_dependency = true, -- Code lens to upgrade dependencies
 						},
 						hints = {
-							assignVariableTypes = true,
-							compositeLiteralFields = true,
-							compositeLiteralTypes = true,
-							constantValues = true,
-							parameterNames = true,
-							rangeVariableTypes = true,
+							-- assignVariableTypes = true,
+							-- compositeLiteralFields = true,
+							-- compositeLiteralTypes = true,
+							-- constantValues = true,
+							-- parameterNames = true,
+							-- rangeVariableTypes = true,
 						},
 					},
 				},
 			})
-
-			-- lspconfig.gopls.setup({ capabilities = capabilities })
 		end,
 	},
 }
