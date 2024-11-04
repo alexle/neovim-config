@@ -1,6 +1,7 @@
 vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("set cursorline")
 
+-- Indentation settings
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.expandtab = true
@@ -9,13 +10,13 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 
+-- UI settings
 vim.opt.number = true
 vim.opt.title = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 0
 vim.opt.scrolloff = 10
@@ -27,44 +28,47 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 
+-- Spell settings
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 
+-- Leader key
 vim.g.mapleader = " "
 
+-- Key mappings
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local builtin = require("telescope.builtin")
 
 map("i", "jj", "<Esc>", opts)
 
-vim.keymap.set("n", "<leader>w", ":wa<CR>", opts)
-vim.keymap.set("n", "<leader>q", ":wq<CR>", opts)
-vim.keymap.set("n", "<leader>wq", ":wqa<CR>", opts)
+map("n", "<leader>w", ":wa<CR>", opts)
+map("n", "<leader>q", ":wq<CR>", opts)
+map("n", "<leader>wq", ":wqa<CR>", opts)
 
 -- Select all
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+map("n", "<C-a>", "gg<S-v>G")
 
 -- Copy inside double quotes
-vim.keymap.set("n", "<leader>;", 'yi"', opts)
+map("n", "<leader>;", 'yi"', opts)
 
 -- Nav windows
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
-vim.keymap.set("n", "<leader>v", ":vsplit<CR>", opts)
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-l>", "<C-w>l", opts)
+map("n", "<C-l>", "<C-w>l", opts)
+map("n", "<leader>v", ":vsplit<CR>", opts)
 
 -- Nav tabs
-vim.keymap.set("n", "<Tab>", "gt", opts)
-vim.keymap.set("n", "<leader>x", ":close<CR>", opts)
+map("n", "<Tab>", "gt", opts)
+map("n", "<leader>x", ":close<CR>", opts)
 
 -- None LS
-vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
+map("n", "<leader>ff", vim.lsp.buf.format, {})
 
 -- LSP config
-vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
-vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+map("n", "K", vim.lsp.buf.hover, {})
+map("n", "gD", vim.lsp.buf.declaration, {})
+map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- LazyGit
 map("n", "<leader>gg", ":LazyGit<CR>", opts)
@@ -74,12 +78,12 @@ map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
 map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
 
 -- Telescope
-vim.keymap.set("n", "<leader> ", builtin.find_files, opts)
-vim.keymap.set("n", "<leader>f", builtin.live_grep, opts)
-vim.keymap.set("n", "<leader>r", builtin.lsp_references, opts)
-vim.keymap.set("n", "<leader>d", builtin.lsp_definitions, opts)
-vim.keymap.set("n", "<leader>,", builtin.buffers, opts)
-vim.keymap.set("n", "<leader>l", function()
+map("n", "<leader> ", builtin.find_files, opts)
+map("n", "<leader>f", builtin.live_grep, opts)
+map("n", "<leader>r", builtin.lsp_references, opts)
+map("n", "<leader>d", builtin.lsp_definitions, opts)
+map("n", "<leader>,", builtin.buffers, opts)
+map("n", "<leader>l", function()
 	builtin.lsp_document_symbols({ symbols = { "function", "method" } })
 end, opts)
 
@@ -100,9 +104,10 @@ map("v", "<leader><Tab>", ":CopilotChat<CR>", opts)
 map("n", "ç", ":CopilotChatToggle<CR>", opts)
 map({ "n", "v" }, "<leader>ce", ":CopilotChatExplain<CR>", opts)
 map({ "n", "v" }, "<leader>cf", ":CopilotChatFix<CR>", opts)
+map({ "n", "v" }, "<leader>co", ":CopilotChatOptimize<CR>", opts)
 
 -- Manage floating windows
-vim.keymap.set("n", "<esc>", function()
+map("n", "<esc>", function()
 	for _, win in ipairs(vim.api.nvim_list_wins()) do
 		if vim.api.nvim_win_get_config(win).relative == "win" then
 			vim.api.nvim_win_close(win, false)
