@@ -9,7 +9,7 @@ return {
 				view_info = false,
 				view_warn = "notify",
 				view_error = "notify",
-				view_history = "split",
+				view_history = "messages",
 				view_search = "virtualtext",
 				opts = {
 					timeout = 3000,
