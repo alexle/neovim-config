@@ -27,7 +27,7 @@ return {
 		opts = {
 			debug = false,
 			auto_insert_mode = false, -- Automatically insert the suggestion in insert mode
-			highlight_selection = true, -- Highlight suggestion in the source buffer when in the chat win
+			highlight_selection = false, -- Highlight suggestion in the source buffer when in the chat win
 			window = {
 				width = 0.3, -- Fraction of the parent's screen width
 			},
