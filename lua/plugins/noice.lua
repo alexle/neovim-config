@@ -12,7 +12,7 @@ return {
 				view_history = "messages",
 				view_search = "virtualtext",
 				opts = {
-					timeout = 3000,
+					timeout = 2000,
 				},
 			},
 			keymaps = {},
@@ -22,4 +22,8 @@ return {
 			"rcarriga/nvim-notify",
 		},
 	},
+
+	-- Usage
+	-- Noice last
+	-- Noice history
 }

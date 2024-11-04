@@ -106,6 +106,9 @@ map({ "n", "v" }, "<leader>ce", ":CopilotChatExplain<CR>", opts)
 map({ "n", "v" }, "<leader>cf", ":CopilotChatFix<CR>", opts)
 map({ "n", "v" }, "<leader>co", ":CopilotChatOptimize<CR>", opts)
 
+-- Noice
+map("n", "<leader>nl", ":Noice last<CR>", opts)
+
 -- Manage floating windows
 map("n", "<esc>", function()
 	for _, win in ipairs(vim.api.nvim_list_wins()) do
@@ -115,4 +118,4 @@ map("n", "<esc>", function()
 	end
 end)
 
-vim.api.nvim_set_keymap("t", "<C-t>", "<C-\\><C-n>:CFloatTerm<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "<C-t>", "<C-\\><C-n>:CFloatTerm<CR>", opts)
