@@ -95,8 +95,11 @@ map("n", "<leader>ut", ":GoTestPkg<CR>", opts)
 map("n", "<leader>uf", ":GoTestFunc<CR>", opts)
 
 -- Copilot Chat
-map("n", "<leader>c", ":CopilotChatToggle<CR>", opts)
 map("n", "<leader><Tab>", ":CopilotChat ", opts)
+map("v", "<leader><Tab>", ":CopilotChat<CR>", opts)
+map("n", "ç", ":CopilotChatToggle<CR>", opts)
+map({ "n", "v" }, "<leader>ce", ":CopilotChatExplain<CR>", opts)
+map({ "n", "v" }, "<leader>cf", ":CopilotChatFix<CR>", opts)
 
 -- Manage floating windows
 vim.keymap.set("n", "<esc>", function()
