@@ -79,9 +79,10 @@ map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
 
 -- Telescope
 map("n", "<leader> ", builtin.find_files, opts)
-map("n", "<leader>f", builtin.live_grep, opts)
+map("n", "ƒ", builtin.live_grep, opts)
 map("n", "<leader>r", builtin.lsp_references, opts)
-map("n", "<leader>d", builtin.lsp_definitions, opts)
+map("n", "∂", builtin.lsp_definitions, opts)
+map("n", "∑", "<C-o>", opts)
 map("n", "<leader>,", builtin.buffers, opts)
 map("n", "<leader>l", function()
 	builtin.lsp_document_symbols({ symbols = { "function", "method" } })
