@@ -48,14 +48,6 @@ return {
 							tidy = true, -- Run `go mod tidy`
 							upgrade_dependency = true, -- Code lens to upgrade dependencies
 						},
-						hints = {
-							-- assignVariableTypes = true,
-							-- compositeLiteralFields = true,
-							-- compositeLiteralTypes = true,
-							-- constantValues = true,
-							-- parameterNames = true,
-							-- rangeVariableTypes = true,
-						},
 					},
 				},
 			})

@@ -62,6 +62,9 @@ map("n", "<leader>v", ":vsplit<CR>", opts)
 map("n", "<Tab>", "gt", opts)
 map("n", "<leader>x", ":close<CR>", opts)
 
+-- Nav quick fix
+map("n", "<C-b>", "<C-w>p", opts)
+
 -- None LS
 map("n", "<leader>ff", vim.lsp.buf.format, {})
 
@@ -78,11 +81,11 @@ map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
 map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
 
 -- Telescope
-map("n", "<leader> ", builtin.find_files, opts)
-map("n", "ƒ", builtin.live_grep, opts)
-map("n", "<leader>r", builtin.lsp_references, opts)
-map("n", "∂", builtin.lsp_definitions, opts)
-map("n", "∑", "<C-o>", opts)
+map("n", "<leader> ", builtin.find_files, opts) -- space space
+map("n", "ƒ", builtin.live_grep, opts) -- <Alt-f>
+map("n", "®", builtin.lsp_references, opts) -- <Alt-r>
+map("n", "∂", builtin.lsp_definitions, opts) -- <Alt-d>
+map("n", "∑", "<C-o>", opts) -- <Alt-w>
 map("n", "<leader>,", builtin.buffers, opts)
 map("n", "<leader>l", function()
 	builtin.lsp_document_symbols({ symbols = { "function", "method" } })

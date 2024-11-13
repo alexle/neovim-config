@@ -19,3 +19,8 @@ OfferingsAPI
 Addon
 addon
 OES
+LessThanThreshold
+namespace
+CloudWatch
+runbook
+Terraform
