@@ -16,6 +16,8 @@ return {
 							["<C-u>"] = false,
 						},
 					},
+					layout_config = { width = 0.9 },
+					path_display = { "filename_first" },
 				},
 				pickers = {
 					buffers = {
