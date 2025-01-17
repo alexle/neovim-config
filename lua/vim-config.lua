@@ -40,10 +40,11 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local builtin = require("telescope.builtin")
 
+-- Quick ESC
 map("i", "jj", "<Esc>", opts)
 
 map("n", "<leader>w", ":wa<CR>", opts)
-map("n", "<leader>q", ":wq<CR>", opts)
+map("n", "<leader>q", ":qa<CR>", opts)
 map("n", "<leader>wq", ":wqa<CR>", opts)
 
 -- Select all
