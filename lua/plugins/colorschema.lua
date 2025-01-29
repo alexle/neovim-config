@@ -2,7 +2,6 @@ return {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
-		priority = 10,
 		config = function()
 			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
@@ -19,6 +18,14 @@ return {
 		name = "cyberdream",
 		config = function()
 			vim.cmd.colorscheme("cyberdream")
+		end,
+	},
+	{
+		"projekt0n/github-nvim-theme",
+		name = "github-theme",
+		priority = 1000,
+		config = function()
+			vim.cmd("colorscheme github_dark_default")
 		end,
 	},
 }
