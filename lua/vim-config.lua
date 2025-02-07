@@ -1,3 +1,6 @@
+-- Leader key
+-- vim.g.mapleader = " "
+
 vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("set cursorline")
 
@@ -31,9 +34,6 @@ vim.opt.splitkeep = "cursor"
 -- Spell settings
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
-
--- Leader key
-vim.g.mapleader = " "
 
 -- Key mappings
 local map = vim.keymap.set
@@ -75,11 +75,11 @@ map("n", "gD", vim.lsp.buf.declaration, {})
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- LazyGit
-map("n", "<leader>gg", ":LazyGit<CR>", opts)
+-- map("n", "<leader>gg", ":LazyGit<CR>", opts)
 
 -- GitSigns
-map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
-map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
+-- map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
+-- map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
 
 -- Telescope
 map("n", "<leader> ", builtin.find_files, opts) -- space space
@@ -110,9 +110,6 @@ map("n", "ç", ":CopilotChatToggle<CR>", opts)
 map({ "n", "v" }, "<leader>ce", ":CopilotChatExplain<CR>", opts)
 map({ "n", "v" }, "<leader>cf", ":CopilotChatFix<CR>", opts)
 map({ "n", "v" }, "<leader>co", ":CopilotChatOptimize<CR>", opts)
-
--- Noice
-map("n", "<leader>nl", ":Noice last<CR>", opts)
 
 -- Manage floating windows
 map("n", "<esc>", function()
