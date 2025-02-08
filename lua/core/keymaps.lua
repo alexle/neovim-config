@@ -7,7 +7,7 @@ vim.g.mapleader = " "
 vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("set cursorline")
 
--- Quick ESC
+-- Quick esc
 map("i", "jj", "<Esc>", opts)
 
 map("n", "<leader>w", ":wa<CR>", opts)
@@ -32,3 +32,6 @@ map("n", "<leader>x", ":close<CR>", opts)
 
 -- Nav quick fix
 map("n", "<C-b>", "<C-w>p", opts)
+
+-- Nav previous window
+map("n", "∑", "<C-o>", opts) -- <Alt-w>

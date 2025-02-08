@@ -25,7 +25,7 @@ return {
 			},
 		},
 		keys = {
-			-- other
+			---------- OTHER
 			{
 				"<leader>gg",
 				function()
@@ -56,7 +56,7 @@ return {
 				desc = "Prev Reference",
 				mode = { "n", "t" },
 			},
-			-- git
+			---------- GIT
 			{
 				"<leader>gb",
 				function()
@@ -112,6 +112,79 @@ return {
 					Snacks.git.blame_line()
 				end,
 				desc = "Git Blame",
+			},
+			---------- Top Pickers & Explorer
+			{
+				"<leader><space>",
+				function()
+					Snacks.picker.smart()
+				end,
+				desc = "Smart Find Files",
+			},
+			{
+				"<leader>,",
+				function()
+					Snacks.picker.buffers()
+				end,
+				desc = "Buffers",
+			},
+			{
+				"ƒ", -- alt f
+				function()
+					Snacks.picker.grep()
+				end,
+				desc = "Grep",
+			},
+			---------- LSP
+			{
+				"∂", -- alt d
+				function()
+					Snacks.picker.lsp_definitions()
+				end,
+				desc = "Goto Definition",
+			},
+			{
+				"gD",
+				function()
+					Snacks.picker.lsp_declarations()
+				end,
+				desc = "Goto Declaration",
+			},
+			{
+				"®", -- alt r
+				function()
+					Snacks.picker.lsp_references()
+				end,
+				nowait = true,
+				desc = "References",
+			},
+			{
+				"gI",
+				function()
+					Snacks.picker.lsp_implementations()
+				end,
+				desc = "Goto Implementation",
+			},
+			{
+				"gy",
+				function()
+					Snacks.picker.lsp_type_definitions()
+				end,
+				desc = "Goto T[y]pe Definition",
+			},
+			{
+				"<leader>l",
+				function()
+					Snacks.picker.lsp_symbols()
+				end,
+				desc = "LSP Symbols",
+			},
+			{
+				"<leader>sS",
+				function()
+					Snacks.picker.lsp_workspace_symbols()
+				end,
+				desc = "LSP Workspace Symbols",
 			},
 		},
 	},
