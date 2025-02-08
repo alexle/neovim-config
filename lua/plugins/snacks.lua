@@ -7,24 +7,35 @@ return {
 			bigfile = { enabled = true },
 			dashboard = { enabled = true },
 			explorer = { enabled = true },
-			indent = { enabled = true },
+			git = { enabled = true },
+			indent = { enabled = false },
 			input = { enabled = true },
 			lazygit = { enabled = true },
 			picker = { enabled = true },
 			notifier = { enabled = true, timeout = 3000 },
+			notify = { enabled = true },
 			quickfile = { enabled = true },
 			scope = { enabled = true },
 			scroll = { enabled = true },
 			statuscolumn = { enabled = true },
+			terminal = { enabled = true },
 			words = { enabled = true },
 		},
 		keys = {
+			-- other
 			{
 				"<leader>gg",
 				function()
 					Snacks.lazygit()
 				end,
 				desc = "Lazygit",
+			},
+			{
+				"<c-/>",
+				function()
+					Snacks.terminal()
+				end,
+				desc = "Toggle Terminal",
 			},
 			-- git
 			{
@@ -75,6 +86,13 @@ return {
 					Snacks.picker.git_log_file()
 				end,
 				desc = "Git Log File",
+			},
+			{
+				"<leader>gm",
+				function()
+					Snacks.git.blame_line()
+				end,
+				desc = "Git Blame",
 			},
 		},
 	},
