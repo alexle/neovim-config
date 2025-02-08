@@ -1,70 +1,6 @@
--- Leader key
--- vim.g.mapleader = " "
-
-vim.cmd("set clipboard+=unnamedplus")
-vim.cmd("set cursorline")
-
--- Indentation settings
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.expandtab = true
-vim.opt.smarttab = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-
--- UI settings
-vim.opt.number = true
-vim.opt.title = true
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.cmdheight = 0
-vim.opt.laststatus = 0
-vim.opt.scrolloff = 10
-vim.opt.wrap = false
-vim.opt_local.wrap = true
-vim.opt.swapfile = false
-vim.opt.backspace = { "start", "eol", "indent" }
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.splitkeep = "cursor"
-
--- Spell settings
-vim.opt.spelllang = "en_us"
-vim.opt.spell = true
-
--- Key mappings
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local builtin = require("telescope.builtin")
-
--- Quick ESC
-map("i", "jj", "<Esc>", opts)
-
-map("n", "<leader>w", ":wa<CR>", opts)
-map("n", "<leader>q", ":qa<CR>", opts)
-map("n", "<leader>wq", ":wqa<CR>", opts)
-
--- Select all
-map("n", "<C-a>", "gg<S-v>G")
-
--- Copy inside double quotes
-map("n", "<leader>;", 'yi"', opts)
-
--- Nav windows
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<leader>v", ":vsplit<CR>", opts)
-
--- Nav tabs
-map("n", "<Tab>", "gt", opts)
-map("n", "<leader>x", ":close<CR>", opts)
-
--- Nav quick fix
-map("n", "<C-b>", "<C-w>p", opts)
 
 -- None LS
 map("n", "<leader>ff", vim.lsp.buf.format, {})
@@ -73,13 +9,6 @@ map("n", "<leader>ff", vim.lsp.buf.format, {})
 map("n", "K", vim.lsp.buf.hover, {})
 map("n", "gD", vim.lsp.buf.declaration, {})
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-
--- LazyGit
--- map("n", "<leader>gg", ":LazyGit<CR>", opts)
-
--- GitSigns
--- map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
--- map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", opts)
 
 -- Telescope
 map("n", "<leader> ", builtin.find_files, opts) -- space space
