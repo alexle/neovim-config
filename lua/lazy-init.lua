@@ -18,4 +18,4 @@ require("lazy").setup({
 	change_detection = { notify = false },
 })
 
-require("vim-plugins")
+require("keymap-plugins")
