@@ -19,7 +19,10 @@ return {
 			scroll = { enabled = true },
 			statuscolumn = { enabled = true },
 			terminal = { enabled = true },
-			words = { enabled = true },
+			words = {
+				enabled = true,
+				win = { style = "terminal" },
+			},
 		},
 		keys = {
 			-- other
