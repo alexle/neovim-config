@@ -26,12 +26,11 @@ return {
 		build = "make tiktoken", -- Only on MacOS or Linux
 		opts = {
 			debug = false,
-			auto_insert_mode = true, -- Automatically insert the suggestion in insert mode
-			highlight_selection = true, -- Highlight suggestion in the source buffer when in the chat win
+			auto_insert_mode = false,
+			highlight_selection = true,
 			window = {
 				width = 0.3, -- Fraction of the parent's screen width
 			},
 		},
-		-- See Commands section for default commands if you want to lazy load on them
 	},
 }
