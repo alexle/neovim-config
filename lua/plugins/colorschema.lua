@@ -1,9 +1,9 @@
 return {
 	{
 		"catppuccin/nvim",
-		config = function()
-			vim.cmd.colorscheme("catppuccin-macchiato")
-		end,
+		-- config = function()
+		-- 	vim.cmd.colorscheme("catppuccin-macchiato")
+		-- end,
 	},
 	{
 		"cpea2506/one_monokai.nvim",
@@ -19,9 +19,9 @@ return {
 	},
 	{
 		"projekt0n/github-nvim-theme",
-		-- config = function()
-		-- 	vim.cmd.colorscheme("github_dark_dimmed")
-		-- end,
+		config = function()
+			vim.cmd.colorscheme("github_dark")
+		end,
 	},
 	{
 		"folke/tokyonight.nvim",
