@@ -23,8 +23,11 @@ map("n", "<leader>;", 'yi"', opts)
 -- Nav windows
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<C-l>", "<C-w>l", opts)
 map("n", "<leader>v", ":vsplit<CR>", opts)
+
+-- Nav windows from terminal mode (for Claude Code, etc.)
+map("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)
+map("t", "<C-l>", "<C-\\><C-n><C-w>l", opts)
 
 -- Nav tabs
 map("n", "<Tab>", "gt", opts)

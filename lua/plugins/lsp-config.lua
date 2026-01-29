@@ -16,21 +16,19 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
 
-			lspconfig.lua_ls.setup({ capabilities = capabilities })
-			lspconfig.bashls.setup({ capabilities = capabilities })
-			lspconfig.pylsp.setup({ capabilities = capabilities })
-			lspconfig.sqlls.setup({ capabilities = capabilities })
-			lspconfig.terraform_lsp.setup({ capabilities = capabilities })
-			lspconfig.terraformls.setup({ capabilities = capabilities })
-			lspconfig.html.setup({ capabilities = capabilities })
-			lspconfig.css_variables.setup({ capabilities = capabilities })
+			-- Simple servers with just capabilities
+			local simple_servers = { "lua_ls", "bashls", "pylsp", "sqlls", "terraform_lsp", "terraformls", "html", "css_variables" }
+			for _, server in ipairs(simple_servers) do
+				vim.lsp.config[server] = { capabilities = capabilities }
+				vim.lsp.enable(server)
+			end
 
-			lspconfig.gopls.setup({
+			-- gopls with custom settings
+			vim.lsp.config.gopls = {
 				cmd = { "gopls" },
 				filetypes = { "go", "gomod", "gowork" },
-				root_dir = require("lspconfig.util").root_pattern("go.mod", ".git"),
+				root_markers = { "go.mod", ".git" },
 				capabilities = capabilities,
 				settings = {
 					gopls = {
@@ -43,16 +41,18 @@ return {
 						},
 						staticcheck = true,
 						codelenses = {
-							generate = true, -- Enable code lens to run `go generate`
-							gc_details = true, -- Show detailed heap diagnostics
-							tidy = true, -- Run `go mod tidy`
-							upgrade_dependency = true, -- Code lens to upgrade dependencies
+							generate = true,
+							gc_details = true,
+							tidy = true,
+							upgrade_dependency = true,
 						},
 					},
 				},
-			})
+			}
+			vim.lsp.enable("gopls")
 
-			lspconfig.yamlls.setup({
+			-- yamlls with schema settings
+			vim.lsp.config.yamlls = {
 				capabilities = capabilities,
 				settings = {
 					yaml = {
@@ -61,7 +61,8 @@ return {
 						},
 					},
 				},
-			})
+			}
+			vim.lsp.enable("yamlls")
 		end,
 	},
 }
