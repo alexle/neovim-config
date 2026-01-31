@@ -40,11 +40,12 @@ return {
 				desc = "Lazygit",
 			},
 			{
-				"<c-/>",
+				"å", -- alt+a
 				function()
 					Snacks.terminal()
 				end,
 				desc = "Toggle Terminal",
+				mode = { "n", "t" },
 			},
 			{
 				"]]",

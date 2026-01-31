@@ -27,7 +27,7 @@ return {
 		keys = {
 			{ "<leader><Tab>", ":CopilotChat ", mode = "n", desc = "Copilot Chat" },
 			{ "<leader><Tab>", "<cmd>CopilotChat<cr>", mode = "v", desc = "Copilot Chat" },
-			{ "ç", "<cmd>CopilotChatToggle<cr>", desc = "Toggle Copilot Chat" },
+			{ "<M-Tab>", "<cmd>CopilotChatToggle<cr>", desc = "Toggle Copilot Chat" }, -- alt+tab
 			{ "<leader>ce", "<cmd>CopilotChatExplain<cr>", mode = { "n", "v" }, desc = "Explain" },
 			{ "<leader>cf", "<cmd>CopilotChatFix<cr>", mode = { "n", "v" }, desc = "Fix" },
 			{ "<leader>co", "<cmd>CopilotChatOptimize<cr>", mode = { "n", "v" }, desc = "Optimize" },

@@ -27,6 +27,8 @@ map("n", "<leader>v", ":vsplit<CR>", opts)
 
 -- Nav windows from terminal mode (for Claude Code, etc.)
 map("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)
+map("t", "<C-j>", "<C-\\><C-n><C-w>j", opts)
+map("t", "<C-k>", "<C-\\><C-n><C-w>k", opts)
 map("t", "<C-l>", "<C-\\><C-n><C-w>l", opts)
 
 -- Nav tabs
