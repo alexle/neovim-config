@@ -24,6 +24,14 @@ return {
 			{ "nvim-lua/plenary.nvim" },
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
+		keys = {
+			{ "<leader><Tab>", ":CopilotChat ", mode = "n", desc = "Copilot Chat" },
+			{ "<leader><Tab>", "<cmd>CopilotChat<cr>", mode = "v", desc = "Copilot Chat" },
+			{ "ç", "<cmd>CopilotChatToggle<cr>", desc = "Toggle Copilot Chat" },
+			{ "<leader>ce", "<cmd>CopilotChatExplain<cr>", mode = { "n", "v" }, desc = "Explain" },
+			{ "<leader>cf", "<cmd>CopilotChatFix<cr>", mode = { "n", "v" }, desc = "Fix" },
+			{ "<leader>co", "<cmd>CopilotChatOptimize<cr>", mode = { "n", "v" }, desc = "Optimize" },
+		},
 		opts = {
 			debug = false,
 			auto_insert_mode = false,
