@@ -1,6 +1,7 @@
 return {
 	{
 		"zbirenbaum/copilot-cmp",
+		cond = not vim.g.vscode,
 		event = "InsertEnter",
 		config = function()
 			require("copilot_cmp").setup()
@@ -18,6 +19,7 @@ return {
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
+		cond = not vim.g.vscode,
 		branch = "main",
 		dependencies = {
 			{ "zbirenbaum/copilot.lua" }, -- Or github/copilot.vim

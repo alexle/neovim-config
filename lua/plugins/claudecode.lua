@@ -1,5 +1,6 @@
 return {
 	"coder/claudecode.nvim",
+	cond = not vim.g.vscode,
 	dependencies = { "folke/snacks.nvim" },
 	config = true,
 	keys = {

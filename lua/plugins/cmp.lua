@@ -1,6 +1,7 @@
 return {
 	{
 		"L3MON4D3/LuaSnip",
+		cond = not vim.g.vscode,
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
@@ -8,9 +9,11 @@ return {
 	},
 	{
 		"hrsh7th/cmp-nvim-lsp",
+		cond = not vim.g.vscode,
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		cond = not vim.g.vscode,
 		config = function()
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
@@ -47,11 +50,14 @@ return {
 	},
 	{
 		"hrsh7th/cmp-buffer",
+		cond = not vim.g.vscode,
 	},
 	{
 		"hrsh7th/cmp-path",
+		cond = not vim.g.vscode,
 	},
 	{
 		"hrsh7th/cmp-cmdline",
+		cond = not vim.g.vscode,
 	},
 }
