@@ -143,9 +143,23 @@ return {
 				end,
 				desc = "Grep",
 			},
+			{
+				"<leader>sg",
+				function()
+					Snacks.picker.grep()
+				end,
+				desc = "Grep",
+			},
 			---------- LSP
 			{
 				"∂", -- alt d
+				function()
+					Snacks.picker.lsp_definitions()
+				end,
+				desc = "Goto Definition",
+			},
+			{
+				"<leader>d",
 				function()
 					Snacks.picker.lsp_definitions()
 				end,
@@ -165,6 +179,21 @@ return {
 				end,
 				nowait = true,
 				desc = "References",
+			},
+			{
+				"<leader>r",
+				function()
+					Snacks.picker.lsp_references()
+				end,
+				nowait = true,
+				desc = "References",
+			},
+			{
+				"ß", -- alt s
+				function()
+					Snacks.picker.lsp_implementations()
+				end,
+				desc = "Goto Implementation",
 			},
 			{
 				"gI",

@@ -8,7 +8,6 @@ end
 -- File navigation
 map("n", "<leader><space>", action("workbench.action.quickOpen"), { desc = "Find files" })
 map("n", "<leader>,", action("workbench.action.showAllEditors"), { desc = "Buffers" })
-map("n", "<C-n>", action("workbench.action.toggleSidebarVisibility"), { desc = "Toggle sidebar" })
 map("n", "<leader>e", action("workbench.action.toggleSidebarVisibility"), { desc = "Toggle sidebar" })
 map("n", "<leader>p", action("workbench.action.showCommands"), { desc = "Command palette" })
 
@@ -25,8 +24,6 @@ map("n", "gy", action("editor.action.goToTypeDefinition"), { desc = "Go to type 
 map("n", "<leader>l", action("workbench.action.gotoSymbol"), { desc = "Document symbols" })
 map("n", "<leader>sS", action("workbench.action.showAllSymbols"), { desc = "Workspace symbols" })
 map("n", "<leader>ff", action("editor.action.formatDocument"), { desc = "Format" })
-map("n", "<leader>ca", action("editor.action.quickFix"), { desc = "Code actions" })
-map("n", "<leader>cr", action("editor.action.rename"), { desc = "Rename symbol" })
 
 -- Git
 map("n", "<leader>gg", action("workbench.action.terminal.newWithProfile"), { desc = "New terminal profile" })
