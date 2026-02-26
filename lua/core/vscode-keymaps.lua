@@ -41,6 +41,7 @@ map("n", "<leader>uf", action("go.test.cursor"), { desc = "Test function" })
 map("n", "<leader>ut", action("go.test.package"), { desc = "Test package" })
 
 -- Editor navigation
+map("n", "<leader>v", action("workbench.action.splitEditor"), { desc = "Split editor" })
 map("n", "<S-Tab>", action("workbench.action.previousEditorInGroup"), { desc = "Prev editor in group" })
 
 -- Copilot
@@ -48,6 +49,3 @@ map("n", "<leader>ce", action("github.copilot.chat.explain"), { desc = "Copilot 
 
 -- Snowflake
 map("n", "<leader>k", action("snowflake.executeStatements"), { desc = "Snowflake execute" })
-
--- Terminal
-map("n", "<leader>1", action("workbench.action.terminal.runRecentCommand"), { desc = "Run recent terminal cmd" })
