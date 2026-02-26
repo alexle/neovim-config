@@ -16,10 +16,8 @@ map("n", "<leader>p", action("workbench.action.showCommands"), { desc = "Command
 -- VSCode intercepts Alt keys before they reach neovim, so macOS chars (∂, ƒ, etc.) don't work here.
 map("n", "<leader>d", action("editor.action.revealDefinition"), { desc = "Go to definition" })
 map("n", "<leader>r", action("editor.action.goToReferences"), { desc = "References" })
-map("n", "gd", action("editor.action.revealDefinition"), { desc = "Go to definition" })
-map("n", "gD", action("editor.action.revealDeclaration"), { desc = "Go to declaration" })
-map("n", "gr", action("editor.action.goToReferences"), { desc = "References" })
-map("n", "gI", action("editor.action.goToImplementation"), { desc = "Go to implementation" })
+-- gd, gD: overridden by vscode-neovim runtime (vscode-code-actions.vim), don't map here
+map("n", "gi", action("editor.action.goToImplementation"), { desc = "Go to implementation" })
 map("n", "gy", action("editor.action.goToTypeDefinition"), { desc = "Go to type definition" })
 map("n", "<leader>l", action("workbench.action.gotoSymbol"), { desc = "Document symbols" })
 map("n", "<leader>sS", action("workbench.action.showAllSymbols"), { desc = "Workspace symbols" })
