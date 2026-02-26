@@ -131,11 +131,6 @@
         "command": "go.test.cursorOrPrevious"
     },
     {
-        "key": "alt+x",
-        "command": "editor.action.goToImplementation",
-        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
         "key": "alt+h",
         "command": "workbench.view.extension.github-pull-requests"
     },
@@ -143,6 +138,11 @@
         "key": "alt+a",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "terminal.active"
+    },
+    {
+        "key": "alt+x",
+        "command": "editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
         "key": "alt+2",
@@ -220,7 +220,7 @@
                 "workbench.action.terminal.toggleTerminal",
                 {
                     "command": "workbench.action.terminal.sendSequence",
-                    "args": { "text": "claude -p '/sendit'; printf '\\a'\n" }
+                    "args": { "text": "claude -p '/sendit'\n" }
                 }
             ]
         },

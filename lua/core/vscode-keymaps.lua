@@ -23,6 +23,7 @@ map("n", "gI", action("editor.action.goToImplementation"), { desc = "Go to imple
 map("n", "gy", action("editor.action.goToTypeDefinition"), { desc = "Go to type definition" })
 map("n", "<leader>l", action("workbench.action.gotoSymbol"), { desc = "Document symbols" })
 map("n", "<leader>sS", action("workbench.action.showAllSymbols"), { desc = "Workspace symbols" })
+map("n", "<leader>sg", action("workbench.action.findInFiles"), { desc = "Grep" })
 map("n", "<leader>ff", action("editor.action.formatDocument"), { desc = "Format" })
 
 -- Git

@@ -52,7 +52,7 @@ map("n", "∑", "<C-o>", opts) -- <Alt-w>
 if not vim.g.vscode then
 	map("n", "ß", function()
 		vim.notify("Sending it...", vim.log.levels.INFO)
-		vim.fn.jobstart("claude -p '/sendit'; printf '\\a'", {
+		vim.fn.jobstart("claude -p '/sendit'", {
 			on_exit = function(_, code)
 				if code == 0 then
 					vim.notify("Shipped!", vim.log.levels.INFO)
