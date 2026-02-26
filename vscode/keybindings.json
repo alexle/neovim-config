@@ -31,7 +31,7 @@
     // Explorer
     {
         "key": "ctrl+n",
-        "command": "workbench.files.action.focusFilesExplorer"
+        "command": "workbench.explorer.fileView.focus"
     },
     {
         "key": "enter",
