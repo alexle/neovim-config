@@ -189,7 +189,7 @@ return {
 				desc = "References",
 			},
 			{
-				"ß", -- alt s
+				"≈", -- alt x
 				function()
 					Snacks.picker.lsp_implementations()
 				end,

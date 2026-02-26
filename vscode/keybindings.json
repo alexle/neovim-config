@@ -131,7 +131,7 @@
         "command": "go.test.cursorOrPrevious"
     },
     {
-        "key": "alt+s",
+        "key": "alt+x",
         "command": "editor.action.goToImplementation",
         "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
@@ -213,7 +213,7 @@
     },
     // Claude Code sendit (runs in a new terminal)
     {
-        "key": "alt+enter",
+        "key": "alt+s",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
             "text": "claude -p '/sendit'\n"
