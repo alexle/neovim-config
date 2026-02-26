@@ -12,14 +12,11 @@ map("n", "<C-n>", action("workbench.action.toggleSidebarVisibility"), { desc = "
 map("n", "<leader>e", action("workbench.action.toggleSidebarVisibility"), { desc = "Toggle sidebar" })
 map("n", "<leader>p", action("workbench.action.showCommands"), { desc = "Command palette" })
 
--- Search
-map("n", "ƒ", action("workbench.action.findInFiles"), { desc = "Grep" }) -- Alt-F
-
 -- LSP
-map("n", "∂", action("editor.action.revealDefinition"), { desc = "Go to definition" }) -- Alt-D
+-- Note: Alt bindings (alt+d, alt+f, alt+g, alt+r, alt+c, alt+a) are in keybindings.json.
+-- VSCode intercepts Alt keys before they reach neovim, so macOS chars (∂, ƒ, etc.) don't work here.
 map("n", "gd", action("editor.action.revealDefinition"), { desc = "Go to definition" })
 map("n", "gD", action("editor.action.revealDeclaration"), { desc = "Go to declaration" })
-map("n", "®", action("editor.action.goToReferences"), { desc = "References" }) -- Alt-R
 map("n", "gr", action("editor.action.goToReferences"), { desc = "References" })
 map("n", "gI", action("editor.action.goToImplementation"), { desc = "Go to implementation" })
 map("n", "gy", action("editor.action.goToTypeDefinition"), { desc = "Go to type definition" })
@@ -32,12 +29,6 @@ map("n", "<leader>cr", action("editor.action.rename"), { desc = "Rename symbol" 
 -- Git
 map("n", "<leader>gg", action("workbench.action.terminal.newWithProfile"), { desc = "New terminal profile" })
 map("n", "<leader>gm", action("gitlens.toggleLineBlame"), { desc = "Git blame" })
-
--- Terminal
-map("n", "å", action("workbench.action.terminal.toggleTerminal"), { desc = "Toggle terminal" }) -- Alt-A
-
--- AI
-map("n", "ç", action("claude-vscode.focus"), { desc = "Claude" }) -- Alt-C
 
 -- Source control
 map("n", "<leader>gs", action("workbench.view.scm"), { desc = "Source control" })
@@ -52,9 +43,6 @@ map("n", "<leader>ut", action("go.test.package"), { desc = "Test package" })
 
 -- Editor navigation
 map("n", "<S-Tab>", action("workbench.action.previousEditorInGroup"), { desc = "Prev editor in group" })
-
--- Source control (Alt-G)
-map("n", "©", action("workbench.view.scm"), { desc = "Source control" }) -- Alt-G
 
 -- Copilot
 map("n", "<leader>ce", action("github.copilot.chat.explain"), { desc = "Copilot explain" })
