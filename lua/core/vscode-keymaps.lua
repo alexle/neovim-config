@@ -29,16 +29,10 @@ map("n", "<leader>ff", action("editor.action.formatDocument"), { desc = "Format"
 map("n", "<leader>gg", action("workbench.action.terminal.newWithProfile"), { desc = "New terminal profile" })
 map("n", "<leader>gm", action("gitlens.toggleLineBlame"), { desc = "Git blame" })
 
--- Source control
-map("n", "<leader>gs", action("workbench.view.scm"), { desc = "Source control" })
 
 -- Line movement (visual mode)
 map("v", "J", action("editor.action.moveLinesDownAction"), { desc = "Move lines down" })
 map("v", "K", action("editor.action.moveLinesUpAction"), { desc = "Move lines up" })
-
--- Go testing (via VSCode Go extension)
-map("n", "<leader>uf", action("go.test.cursor"), { desc = "Test function" })
-map("n", "<leader>ut", action("go.test.package"), { desc = "Test package" })
 
 -- Editor navigation
 map("n", "<leader>v", action("workbench.action.splitEditor"), { desc = "Split editor" })
