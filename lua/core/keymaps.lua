@@ -1,3 +1,8 @@
+-- Keymap index:
+--   keymaps.lua         — shared/terminal core (leader basics, nav, splits)
+--   vscode-keymaps.lua  — VSCode-only (leader+LSP, vscode.action calls)
+--   plugins/snacks.lua  — terminal LSP, git, pickers (alt-chars, g-motions)
+
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 

@@ -14,9 +14,6 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-if not vim.g.vscode then
-  vim.opt.cmdheight = 0
-end
 vim.opt.laststatus = 0
 vim.opt.scrolloff = 10
 vim.opt.wrap = false

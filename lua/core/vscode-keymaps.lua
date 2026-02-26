@@ -15,6 +15,8 @@ map("n", "<leader>p", action("workbench.action.showCommands"), { desc = "Command
 -- LSP
 -- Note: Alt bindings (alt+d, alt+f, alt+g, alt+r, alt+c, alt+a) are in keybindings.json.
 -- VSCode intercepts Alt keys before they reach neovim, so macOS chars (∂, ƒ, etc.) don't work here.
+map("n", "<leader>d", action("editor.action.revealDefinition"), { desc = "Go to definition" })
+map("n", "<leader>r", action("editor.action.goToReferences"), { desc = "References" })
 map("n", "gd", action("editor.action.revealDefinition"), { desc = "Go to definition" })
 map("n", "gD", action("editor.action.revealDeclaration"), { desc = "Go to declaration" })
 map("n", "gr", action("editor.action.goToReferences"), { desc = "References" })
