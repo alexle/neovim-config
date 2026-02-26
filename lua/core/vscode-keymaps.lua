@@ -8,7 +8,6 @@ end
 -- File navigation
 map("n", "<leader><space>", action("workbench.action.quickOpen"), { desc = "Find files" })
 map("n", "<leader>,", action("workbench.action.showAllEditors"), { desc = "Buffers" })
-map("n", "<leader>e", action("workbench.action.toggleSidebarVisibility"), { desc = "Toggle sidebar" })
 map("n", "<leader>p", action("workbench.action.showCommands"), { desc = "Command palette" })
 
 -- LSP
