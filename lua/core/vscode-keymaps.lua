@@ -36,6 +36,9 @@ map("n", "<leader>gm", action("gitlens.toggleLineBlame"), { desc = "Git blame" }
 -- Terminal
 map("n", "å", action("workbench.action.terminal.toggleTerminal"), { desc = "Toggle terminal" }) -- Alt-A
 
+-- AI
+map("n", "ç", action("claude-vscode.focus"), { desc = "Claude" }) -- Alt-C
+
 -- Source control
 map("n", "<leader>gs", action("workbench.view.scm"), { desc = "Source control" })
 
@@ -46,3 +49,18 @@ map("v", "K", action("editor.action.moveLinesUpAction"), { desc = "Move lines up
 -- Go testing (via VSCode Go extension)
 map("n", "<leader>uf", action("go.test.cursor"), { desc = "Test function" })
 map("n", "<leader>ut", action("go.test.package"), { desc = "Test package" })
+
+-- Editor navigation
+map("n", "<S-Tab>", action("workbench.action.previousEditorInGroup"), { desc = "Prev editor in group" })
+
+-- Source control (Alt-G)
+map("n", "©", action("workbench.view.scm"), { desc = "Source control" }) -- Alt-G
+
+-- Copilot
+map("n", "<leader>ce", action("github.copilot.chat.explain"), { desc = "Copilot explain" })
+
+-- Snowflake
+map("n", "<leader>k", action("snowflake.executeStatements"), { desc = "Snowflake execute" })
+
+-- Terminal
+map("n", "<leader>1", action("workbench.action.terminal.runRecentCommand"), { desc = "Run recent terminal cmd" })

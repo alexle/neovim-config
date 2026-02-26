@@ -33,8 +33,8 @@ map("t", "<C-l>", "<C-\\><C-n><C-w>l", opts)
 
 -- Nav tabs
 map("n", "<Tab>", "gt", opts)
--- map("n", "<S-h>", ":bprevious<CR>", { desc = "Prev buffer" })
--- map("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer" })
+map("n", "[b", ":bprevious<CR>", { desc = "Prev buffer" })
+map("n", "]b", ":bnext<CR>", { desc = "Next buffer" })
 map("n", "<leader>x", ":close<CR>", opts)
 
 -- Nav quick fix

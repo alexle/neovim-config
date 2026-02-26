@@ -1,12 +1,14 @@
 return {
 	{
 		"williamboman/mason.nvim",
+		cond = not vim.g.vscode,
 		config = function()
 			require("mason").setup()
 		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		cond = not vim.g.vscode,
 		lazy = false,
 		opts = {
 			auto_install = true,
@@ -14,6 +16,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		cond = not vim.g.vscode,
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
