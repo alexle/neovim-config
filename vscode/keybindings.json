@@ -223,7 +223,8 @@
                     "args": { "text": "claude -p '/sendit'\n" }
                 }
             ]
-        }
+        },
+        "when": "neovim.mode == 'normal' && editorTextFocus"
     },
     // Terminal
     {

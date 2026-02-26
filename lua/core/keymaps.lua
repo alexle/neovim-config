@@ -47,3 +47,19 @@ map("n", "<C-b>", "<C-w>p", opts)
 
 -- Nav previous window
 map("n", "∑", "<C-o>", opts) -- <Alt-w>
+
+-- Sendit (alt+s) — async git commit+push via Claude
+if not vim.g.vscode then
+	map("n", "ß", function()
+		vim.notify("Sending it...", vim.log.levels.INFO)
+		vim.fn.jobstart("claude -p '/sendit'", {
+			on_exit = function(_, code)
+				if code == 0 then
+					vim.notify("Shipped!", vim.log.levels.INFO)
+				else
+					vim.notify("Sendit failed!", vim.log.levels.ERROR)
+				end
+			end,
+		})
+	end, { desc = "Send it" })
+end
