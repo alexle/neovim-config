@@ -22,8 +22,9 @@ map("n", "<leader>sg", action("workbench.action.findInFiles"), { desc = "Grep" }
 map("n", "<leader>ff", action("editor.action.formatDocument"), { desc = "Format" })
 
 -- Git
-map("n", "<leader>gg", action("workbench.action.terminal.newWithProfile"), { desc = "New terminal profile" })
+map("n", "<leader>gg", action("lazygit.openLazygit"), { desc = "Lazygit" })
 map("n", "<leader>gm", action("gitlens.toggleLineBlame"), { desc = "Git blame" })
+map("n", "<leader>gs", action("workbench.view.scm"), { desc = "Git status" })
 
 
 -- Line movement (visual mode)

@@ -48,7 +48,7 @@
         "command": "explorer.openAndPassFocus",
         "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly"
     },
-    // Search
+    // Search Navigation
     {
         "key": "alt+n",
         "command": "search.action.focusSearchList"
@@ -189,18 +189,6 @@
         "when": "editorTextFocus && foldingEnabled"
     },
     // Cmd shortcuts
-    {
-        "key": "cmd+g cmd+g",
-        "command": "lazygit.openLazygit"
-    },
-    {
-        "key": "ctrl+cmd+r",
-        "command": "code-runner.run"
-    },
-    {
-        "key": "shift+cmd+x",
-        "command": "testing.runAll"
-    },
     {
         "key": "shift+cmd+v",
         "command": "markdown.showPreviewToSide",
