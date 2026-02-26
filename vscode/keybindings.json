@@ -220,7 +220,7 @@
                 "workbench.action.terminal.toggleTerminal",
                 {
                     "command": "workbench.action.terminal.sendSequence",
-                    "args": { "text": "claude -p '/sendit'\n" }
+                    "args": { "text": "claude -p '/sendit'; printf '\\a'\n" }
                 }
             ]
         },
