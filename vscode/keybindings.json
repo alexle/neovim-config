@@ -211,12 +211,18 @@
         "command": "markdown.showPreviewToSide",
         "when": "!notebookEditorFocused && editorLangId == 'markdown'"
     },
-    // Claude Code sendit (runs in a new terminal)
+    // Claude Code sendit (opens terminal + runs command)
     {
         "key": "alt+s",
-        "command": "workbench.action.terminal.sendSequence",
+        "command": "runCommands",
         "args": {
-            "text": "claude -p '/sendit'\n"
+            "commands": [
+                "workbench.action.terminal.toggleTerminal",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": { "text": "claude -p '/sendit'\n" }
+                }
+            ]
         }
     },
     // Terminal
