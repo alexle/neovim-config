@@ -44,11 +44,6 @@
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder"
     },
     {
-        "key": "space s", // open file in split
-        "command": "explorer.openToSide",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly"
-    },
-    {
         "key": "enter", // open file
         "command": "explorer.openAndPassFocus",
         "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly"
