@@ -5,6 +5,9 @@ local function action(cmd)
 	return function() vscode.action(cmd) end
 end
 
+-- Workbench
+map("n", "<leader>o", action("workbench.action.openRecent"), { desc = "Open recent" })
+
 -- File navigation
 map("n", "<leader><space>", action("workbench.action.quickOpen"), { desc = "Find files" })
 map("n", "<leader>,", action("workbench.action.showAllEditors"), { desc = "Buffers" })
@@ -27,9 +30,6 @@ map("n", "<leader>gs", action("workbench.view.scm"), { desc = "Git status" })
 -- Line movement (visual mode)
 map("v", "J", action("editor.action.moveLinesDownAction"), { desc = "Move lines down" })
 map("v", "K", action("editor.action.moveLinesUpAction"), { desc = "Move lines up" })
-
--- Editor navigation
-map("n", "<leader>v", action("workbench.action.splitEditor"), { desc = "Split editor" })
 
 -- Copilot
 map("n", "<leader>ce", action("github.copilot.chat.explain"), { desc = "Copilot explain" })
