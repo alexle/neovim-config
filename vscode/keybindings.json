@@ -73,6 +73,12 @@
         "key": "alt+tab",
         "command": "workbench.panel.chat.view.copilot.focus"
     },
+    // Open recent (leader+o via neovim normal mode)
+    {
+        "key": "space o",
+        "command": "workbench.action.openRecent",
+        "when": "neovim.mode == 'normal' && editorTextFocus"
+    },
     // Alt shortcuts (no vim.mode dependency)
     {
         "key": "alt+d",

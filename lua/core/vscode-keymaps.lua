@@ -1,12 +1,13 @@
+-- VSCode-only keymaps (loaded when vim.g.vscode is true).
+-- Mirrors terminal Neovim bindings via vscode.action(), plus
+-- VSCode-specific features with no terminal equivalent.
+-- Shared bindings live in keymaps.lua and apply to both contexts.
 local vscode = require("vscode")
 local map = vim.keymap.set
 
 local function action(cmd)
 	return function() vscode.action(cmd) end
 end
-
--- Workbench
-map("n", "<leader>o", action("workbench.action.openRecent"), { desc = "Open recent" })
 
 -- File navigation
 map("n", "<leader><space>", action("workbench.action.quickOpen"), { desc = "Find files" })
