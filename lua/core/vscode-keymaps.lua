@@ -31,7 +31,6 @@ map("v", "K", action("editor.action.moveLinesUpAction"), { desc = "Move lines up
 
 -- Editor navigation
 map("n", "<leader>v", action("workbench.action.splitEditor"), { desc = "Split editor" })
-map("n", "<S-Tab>", action("workbench.action.previousEditorInGroup"), { desc = "Prev editor in group" })
 
 -- Copilot
 map("n", "<leader>ce", action("github.copilot.chat.explain"), { desc = "Copilot explain" })
