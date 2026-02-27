@@ -3,13 +3,13 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
-			auto_instal = true,
+			auto_install = true,
 			ensure_installed = {
 				"bash",
 				"css",
 				"dockerfile",
 				"go",
-					"javascript",
+				"javascript",
 				"json",
 				"jq",
 				"lua",

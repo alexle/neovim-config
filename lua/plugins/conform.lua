@@ -3,6 +3,9 @@ return {
 		"stevearc/conform.nvim",
 		cond = not vim.g.vscode,
 		event = { "BufReadPre", "BufNewFile" },
+		keys = {
+			{ "<leader>F", function() require("conform").format({ async = true }) end, desc = "Format buffer" },
+		},
 
 		config = function()
 			local conform = require("conform")
