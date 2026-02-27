@@ -1,3 +1,5 @@
+-- Keymaps that depend on plugins but don't belong in a specific plugin's config.
+-- Prefer putting plugin-specific keymaps in the plugin's keys={} or config block.
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
@@ -8,9 +10,6 @@ if not vim.g.vscode then
 			vim.lsp.buf.format()
 		end,
 	})
-
-	-- NeoTree
-	map("n", "<C-n>", ":Neotree filesystem reveal left<CR>", opts)
 
 	-- Manage floating windows
 	map("n", "<esc>", function()

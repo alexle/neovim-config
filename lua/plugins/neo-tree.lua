@@ -7,6 +7,9 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
 	},
+	keys = {
+		{ "<C-n>", ":Neotree filesystem reveal left<CR>", silent = true },
+	},
 	config = function()
 		local neo_tree = require("neo-tree")
 		neo_tree.setup({
