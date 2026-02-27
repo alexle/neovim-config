@@ -22,9 +22,6 @@ map("n", "<leader>wq", ":wqa<CR>", opts)
 -- Select all
 map("n", "<C-a>", "gg<S-v>G")
 
--- Copy inside double quotes
-map("n", "<leader>;", 'yi"', opts)
-
 -- Nav windows
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-l>", "<C-w>l", opts)
