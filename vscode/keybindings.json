@@ -28,6 +28,23 @@
         "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalFocus"
     },
+    // Return focus to editor from sidebar/panel
+    {
+        "key": "escape",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "sideBarFocus && !inputFocus"
+    },
+    {
+        "key": "q",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "sideBarFocus && !inputFocus"
+    },
+    // Open file picker from sidebar (space space equivalent when no editor is focused)
+    {
+        "key": "space space",
+        "command": "workbench.action.quickOpen",
+        "when": "sideBarFocus && !inputFocus"
+    },
     // Explorer (disabled in pickers — ctrl+n/p navigate picker items)
     {
         "key": "ctrl+n",
