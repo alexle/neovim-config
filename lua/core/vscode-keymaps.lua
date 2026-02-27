@@ -22,7 +22,6 @@ map("n", "<leader>f", action("workbench.action.findInFiles"), { desc = "Grep" })
 
 -- Git
 map("n", "<leader>gg", action("lazygit.openLazygit"), { desc = "Lazygit" })
-map("n", "<leader>gm", action("gitlens.toggleLineBlame"), { desc = "Git blame" })
 map("n", "<leader>gs", action("workbench.view.scm"), { desc = "Git status" })
 
 -- Line movement (visual mode)
