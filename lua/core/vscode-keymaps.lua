@@ -1,7 +1,6 @@
 -- VSCode-only keymaps (loaded when vim.g.vscode is true).
--- Mirrors terminal Neovim bindings via vscode.action(), plus
--- VSCode-specific features with no terminal equivalent.
 -- Shared bindings live in keymaps.lua and apply to both contexts.
+-- Alt bindings live in keybindings.json (VSCode intercepts alt before neovim).
 local vscode = require("vscode")
 local map = vim.keymap.set
 
@@ -9,32 +8,37 @@ local function action(cmd)
 	return function() vscode.action(cmd) end
 end
 
--- File navigation
-map("n", "<leader>;", action("workbench.action.openRecent"), { desc = "Open recent" })
+-- ── Terminal nvim equivalents ──────────────────────────────────
+-- Mirror of snacks.lua / plugin keymaps. When adding a leader
+-- binding in terminal nvim, add the VSCode version here.
+
+-- Pickers (snacks.lua)
 map("n", "<leader><space>", action("workbench.action.quickOpen"), { desc = "Find files" })
 map("n", "<leader>,", action("workbench.action.showAllEditors"), { desc = "Buffers" })
-map("n", "<leader>p", action("workbench.action.showCommands"), { desc = "Command palette" })
+map("n", "<leader>f", action("workbench.action.findInFiles"), { desc = "Grep" })
 
--- LSP
--- Note: Alt bindings (alt+d, alt+f, alt+g, alt+r, alt+c, alt+a) are in keybindings.json.
--- VSCode intercepts Alt keys before they reach neovim, so macOS chars (∂, ƒ, etc.) don't work here.
+-- LSP (snacks.lua)
 map("n", "<leader>d", action("editor.action.revealDefinition"), { desc = "Go to definition" })
 map("n", "<leader>r", action("editor.action.goToReferences"), { desc = "References" })
 map("n", "gI", action("editor.action.goToImplementation"), { desc = "Go to implementation" })
 map("n", "gy", action("editor.action.goToTypeDefinition"), { desc = "Go to type definition" })
 map("n", "<leader>l", action("workbench.action.gotoSymbol"), { desc = "Document symbols" })
-map("n", "<leader>f", action("workbench.action.findInFiles"), { desc = "Grep" })
 
--- Git
+-- Git (snacks.lua)
 map("n", "<leader>gg", action("lazygit.openLazygit"), { desc = "Lazygit" })
 map("n", "<leader>gs", action("workbench.view.scm"), { desc = "Git status" })
+map("n", "<leader>gl", action("git.viewHistory"), { desc = "Git Log" })
+map("n", "<leader>gf", action("git.viewFileHistory"), { desc = "Git Log File" })
+map("n", "<leader>gm", action("gitlens.toggleFileBlame"), { desc = "Git Blame" })
+
+-- Copilot (copilot-cmp.lua)
+map("n", "<leader>ce", action("github.copilot.chat.explain"), { desc = "Copilot explain" })
 
 -- Line movement (visual mode)
 map("v", "J", action("editor.action.moveLinesDownAction"), { desc = "Move lines down" })
 map("v", "K", action("editor.action.moveLinesUpAction"), { desc = "Move lines up" })
 
--- Copilot
-map("n", "<leader>ce", action("github.copilot.chat.explain"), { desc = "Copilot explain" })
-
--- Snowflake
+-- ── VSCode-only (no terminal nvim equivalent) ──────────────────
+map("n", "<leader>;", action("workbench.action.openRecent"), { desc = "Open recent" })
+map("n", "<leader>p", action("workbench.action.showCommands"), { desc = "Command palette" })
 map("n", "<leader>k", action("snowflake.executeStatements"), { desc = "Snowflake execute" })
