@@ -18,14 +18,12 @@ map("n", "<leader>r", action("editor.action.goToReferences"), { desc = "Referenc
 map("n", "gI", action("editor.action.goToImplementation"), { desc = "Go to implementation" })
 map("n", "gy", action("editor.action.goToTypeDefinition"), { desc = "Go to type definition" })
 map("n", "<leader>l", action("workbench.action.gotoSymbol"), { desc = "Document symbols" })
-map("n", "<leader>sg", action("workbench.action.findInFiles"), { desc = "Grep" })
-map("n", "<leader>ff", action("editor.action.formatDocument"), { desc = "Format" })
+map("n", "<leader>f", action("workbench.action.findInFiles"), { desc = "Grep" })
 
 -- Git
 map("n", "<leader>gg", action("lazygit.openLazygit"), { desc = "Lazygit" })
 map("n", "<leader>gm", action("gitlens.toggleLineBlame"), { desc = "Git blame" })
 map("n", "<leader>gs", action("workbench.view.scm"), { desc = "Git status" })
-
 
 -- Line movement (visual mode)
 map("v", "J", action("editor.action.moveLinesDownAction"), { desc = "Move lines down" })

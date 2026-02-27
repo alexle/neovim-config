@@ -2,15 +2,15 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 if not vim.g.vscode then
-	-- Format (LSP)
-	map("n", "<leader>ff", vim.lsp.buf.format, {})
+	-- Auto-format on save (LSP)
+	vim.api.nvim_create_autocmd("BufWritePre", {
+		callback = function()
+			vim.lsp.buf.format()
+		end,
+	})
 
 	-- NeoTree
 	map("n", "<C-n>", ":Neotree filesystem reveal left<CR>", opts)
-
-	-- Go Nvim Test
-	map("n", "<leader>ut", ":GoTestPkg<CR>", opts)
-	map("n", "<leader>uf", ":GoTestFunc<CR>", opts)
 
 	-- Manage floating windows
 	map("n", "<esc>", function()
