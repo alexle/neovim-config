@@ -28,10 +28,21 @@
         "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalFocus"
     },
-    // Explorer
+    // Explorer (disabled in pickers — ctrl+n/p navigate picker items)
     {
         "key": "ctrl+n",
-        "command": "workbench.explorer.fileView.focus"
+        "command": "workbench.explorer.fileView.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
     },
     {
         "key": "enter",
