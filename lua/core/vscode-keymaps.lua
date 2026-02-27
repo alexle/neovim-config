@@ -43,6 +43,9 @@ map("v", "K", action("editor.action.moveLinesUpAction"), { desc = "Move lines up
 -- Test (neotest.lua)
 map("n", "<leader>ut", action("go.test.cursorOrPrevious"), { desc = "Test at Cursor" })
 
+-- Diagnostics (trouble.nvim)
+map("n", "<leader>xx", action("workbench.actions.view.problems"), { desc = "Diagnostics" })
+
 -- ── VSCode-only (no terminal nvim equivalent) ──────────────────
 map("n", "<leader>;", action("workbench.action.openRecent"), { desc = "Open recent" })
 map("n", "<leader>p", action("workbench.action.showCommands"), { desc = "Command palette" })
