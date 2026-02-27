@@ -1,6 +1,5 @@
 return {
 	"fredrikaverpil/neotest-golang",
-	enabled = false, -- TODO: enable once nvim-treesitter main branch + neotest-golang queries align
 	cond = not vim.g.vscode,
 	ft = "go",
 	dependencies = {

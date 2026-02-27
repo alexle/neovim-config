@@ -23,6 +23,8 @@ map("n", "<leader>r", action("editor.action.goToReferences"), { desc = "Referenc
 map("n", "gI", action("editor.action.goToImplementation"), { desc = "Go to implementation" })
 map("n", "gy", action("editor.action.goToTypeDefinition"), { desc = "Go to type definition" })
 map("n", "<leader>l", action("workbench.action.gotoSymbol"), { desc = "Document symbols" })
+map("n", "]d", action("editor.action.marker.nextInFiles"), { desc = "Next diagnostic" })
+map("n", "[d", action("editor.action.marker.prevInFiles"), { desc = "Prev diagnostic" })
 
 -- Git (snacks.lua)
 map("n", "<leader>gg", action("lazygit.openLazygit"), { desc = "Lazygit" })
