@@ -4,7 +4,7 @@ return {
 		cond = not vim.g.vscode,
 		event = { "BufReadPre", "BufNewFile" },
 		keys = {
-			{ "<leader>F", function() require("conform").format({ async = true }) end, desc = "Format buffer" },
+			{ "<leader>o", function() require("conform").format({ async = true }) end, desc = "Format buffer" },
 		},
 
 		config = function()
