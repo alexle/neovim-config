@@ -122,10 +122,6 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "alt+t",
-        "command": "go.test.cursorOrPrevious"
-    },
-    {
         "key": "alt+h",
         "command": "workbench.view.extension.github-pull-requests"
     },
