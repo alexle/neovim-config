@@ -49,7 +49,7 @@
     {
         "key": "ctrl+n",
         "command": "workbench.explorer.fileView.focus",
-        "when": "!inQuickOpen"
+        "when": "!inQuickOpen && !inputFocus"
     },
     {
         "key": "ctrl+n",
